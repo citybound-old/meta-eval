@@ -2,17 +2,19 @@
   "name": "meta-eval",
   "version": "1.0.0",
   "description": "Eval for metaprogramming debuggable JavaScript",
-  "main": "index.js",
+  "main": "index-compiled.js",
   "license": "MIT",
   "author": {
     "name": "Anselm Eickhoff",
     "email": "anselm.eickhoff@gmail.com",
     "url": "https://github.com/aeickhoff"
   },
-  "dependencies": {},
+  "dependencies": {
+    "babel-core": "^5.1.10"
+  },
   "devDependencies": {},
   "scripts": {
-    "test": "node test.js"
+    "test": "node test-compiled.js"
   },
   "keywords": [
     "metaprogramming",
