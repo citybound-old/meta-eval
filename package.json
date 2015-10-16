@@ -1,0 +1,31 @@
+{
+  "name": "meta-eval",
+  "version": "1.0.0",
+  "description": "Eval for metaprogramming debuggable JavaScript",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Anselm Eickhoff",
+    "email": "anselm.eickhoff@gmail.com",
+    "url": "https://github.com/aeickhoff"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "metaprogramming",
+    "eval",
+    "transpilation",
+    "babel"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aeickhoff/meta-eval.git"
+  },
+  "homepage": "https://github.com/aeickhoff/meta-eval",
+  "bugs": {
+    "url": "https://github.com/aeickhoff/meta-eval/issues"
+  }
+}
