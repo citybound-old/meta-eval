@@ -27,7 +27,8 @@ export default function metaEval (source, environment, alias, sourceUrlBase, opt
 `   // this function evaluates ${alias}
 
 	// catch syntax errors early
-	try {parse(source);} catch(e) {
+	try {__parse(source);}
+	catch(e) {
 		if (e instanceof SyntaxError) {
 			__logSyntaxError(source, e);
 			return;
