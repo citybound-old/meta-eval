@@ -4,8 +4,9 @@ import babelParser from "babel-core/lib/helpers/parse.js";
 export default function metaEval (source, environment, alias, filename, sourceUrlBase, options) {
 
 	filename = filename || alias;
+	options = options || {};
 
-	if (options && options.transpile) {
+	if (options.transpile) {
 		try {
 			source = transform(source, {
 				blacklist: ["regenerator", "es6.tailCall"],

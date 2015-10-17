@@ -16,8 +16,9 @@ var _babelCoreLibHelpersParseJs2 = _interopRequireDefault(_babelCoreLibHelpersPa
 function metaEval(source, environment, alias, filename, sourceUrlBase, options) {
 
 	filename = filename || alias;
+	options = options || {};
 
-	if (options && options.transpile) {
+	if (options.transpile) {
 		try {
 			source = (0, _babelCore.transform)(source, {
 				blacklist: ["regenerator", "es6.tailCall"],
