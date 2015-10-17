@@ -24,10 +24,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/aeickhoff/meta-eval.git"
+    "url": "git://github.com/citybound/meta-eval.git"
   },
-  "homepage": "https://github.com/aeickhoff/meta-eval",
+  "homepage": "https://github.com/citybound/meta-eval",
   "bugs": {
-    "url": "https://github.com/aeickhoff/meta-eval/issues"
+    "url": "https://github.com/citybound/meta-eval/issues"
   }
 }
