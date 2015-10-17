@@ -1,7 +1,9 @@
 import babel from "babel-core";
 import babelParser from "babel-core/lib/helpers/parse.js";
 
-export default function metaEval (source, environment, alias, sourceUrlBase, options) {
+export default function metaEval (source, environment, alias, filename, sourceUrlBase, options) {
+
+	filename = filename || alias;
 
 	if (options && options.transpile) {
 		try {
@@ -9,7 +11,7 @@ export default function metaEval (source, environment, alias, sourceUrlBase, opt
 				blacklist: ["regenerator", "es6.tailCall"],
 				loose: ["es6.forOf"],
 				optional: ["es7.classProperties"],
-				filename: alias
+				filename: filename
 			}).code;
 		} catch (e) {
 			if (e instanceof SyntaxError) {
@@ -37,7 +39,7 @@ export default function metaEval (source, environment, alias, sourceUrlBase, opt
 
 	eval(source);
 
-	//# sourceURL=${sourceUrlBase + "metaEval/" + alias}`;
+	//# sourceURL=${sourceUrlBase + "metaEval/" + filename}`;
 
 	environment.__logSyntaxError = logSyntaxError;
 	environment.__parse = babelParser;

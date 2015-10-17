@@ -15,7 +15,9 @@ var _babelCoreLibHelpersParseJs = require("babel-core/lib/helpers/parse.js");
 
 var _babelCoreLibHelpersParseJs2 = _interopRequireDefault(_babelCoreLibHelpersParseJs);
 
-function metaEval(source, environment, alias, sourceUrlBase, options) {
+function metaEval(source, environment, alias, filename, sourceUrlBase, options) {
+
+	filename = filename || alias;
 
 	if (options && options.transpile) {
 		try {
@@ -23,7 +25,7 @@ function metaEval(source, environment, alias, sourceUrlBase, options) {
 				blacklist: ["regenerator", "es6.tailCall"],
 				loose: ["es6.forOf"],
 				optional: ["es7.classProperties"],
-				filename: alias
+				filename: filename
 			}).code;
 		} catch (e) {
 			if (e instanceof SyntaxError) {
@@ -37,7 +39,7 @@ function metaEval(source, environment, alias, sourceUrlBase, options) {
 	source = source + "\n//# sourceURL=" + sourceUrlBase + alias;
 
 	var executable = Object.create(Function.prototype);
-	var wrapperSource = "   // this function evaluates " + alias + "\n\n\t// catch syntax errors early\n\ttry {__parse(source);}\n\tcatch(e) {\n\t\tif (e instanceof SyntaxError) {\n\t\t\t__logSyntaxError(source, e);\n\t\t\treturn;\n\t\t} else throw e;\n\t}\n\n\teval(source);\n\n\t//# sourceURL=" + (sourceUrlBase + "metaEval/" + alias);
+	var wrapperSource = "   // this function evaluates " + alias + "\n\n\t// catch syntax errors early\n\ttry {__parse(source);}\n\tcatch(e) {\n\t\tif (e instanceof SyntaxError) {\n\t\t\t__logSyntaxError(source, e);\n\t\t\treturn;\n\t\t} else throw e;\n\t}\n\n\teval(source);\n\n\t//# sourceURL=" + (sourceUrlBase + "metaEval/" + filename);
 
 	environment.__logSyntaxError = logSyntaxError;
 	environment.__parse = _babelCoreLibHelpersParseJs2["default"];
