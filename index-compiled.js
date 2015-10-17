@@ -9,8 +9,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var _babelCore = require("babel-core");
 
-var _babelCore2 = _interopRequireDefault(_babelCore);
-
 var _babelCoreLibHelpersParseJs = require("babel-core/lib/helpers/parse.js");
 
 var _babelCoreLibHelpersParseJs2 = _interopRequireDefault(_babelCoreLibHelpersParseJs);
@@ -21,7 +19,7 @@ function metaEval(source, environment, alias, filename, sourceUrlBase, options) 
 
 	if (options && options.transpile) {
 		try {
-			source = _babelCore2["default"].transform(source, {
+			source = (0, _babelCore.transform)(source, {
 				blacklist: ["regenerator", "es6.tailCall"],
 				loose: ["es6.forOf"],
 				optional: ["es7.classProperties"],

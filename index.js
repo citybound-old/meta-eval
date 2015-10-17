@@ -1,4 +1,4 @@
-import babel from "babel-core";
+import {transform} from "babel-core";
 import babelParser from "babel-core/lib/helpers/parse.js";
 
 export default function metaEval (source, environment, alias, filename, sourceUrlBase, options) {
@@ -7,7 +7,7 @@ export default function metaEval (source, environment, alias, filename, sourceUr
 
 	if (options && options.transpile) {
 		try {
-			source = babel.transform(source, {
+			source = transform(source, {
 				blacklist: ["regenerator", "es6.tailCall"],
 				loose: ["es6.forOf"],
 				optional: ["es7.classProperties"],
