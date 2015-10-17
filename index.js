@@ -38,8 +38,9 @@ export default function metaEval (source, environment, alias, filename, sourceUr
 	}
 
 	eval(source);
+	`;
 
-	//# sourceURL=${sourceUrlBase + "metaEval/" + alias}`;
+	if (options.wrapperFileListed) wrapperSource += `//# sourceURL=${sourceUrlBase + "metaEval/" + alias}`;
 
 	environment.__logSyntaxError = logSyntaxError;
 	environment.__parse = babelParser;
