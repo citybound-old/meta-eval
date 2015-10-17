@@ -1,5 +1,5 @@
 import babel from "babel-core";
-import babelParser from "./node_modules/babel-core/lib/helpers/parse.js";
+import babelParser from "babel-core/lib/helpers/parse.js";
 
 export default function metaEval (source, environment, alias, sourceUrlBase, options) {
 

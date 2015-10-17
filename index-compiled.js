@@ -11,9 +11,9 @@ var _babelCore = require("babel-core");
 
 var _babelCore2 = _interopRequireDefault(_babelCore);
 
-var _node_modulesBabelCoreLibHelpersParseJs = require("./node_modules/babel-core/lib/helpers/parse.js");
+var _babelCoreLibHelpersParseJs = require("babel-core/lib/helpers/parse.js");
 
-var _node_modulesBabelCoreLibHelpersParseJs2 = _interopRequireDefault(_node_modulesBabelCoreLibHelpersParseJs);
+var _babelCoreLibHelpersParseJs2 = _interopRequireDefault(_babelCoreLibHelpersParseJs);
 
 function metaEval(source, environment, alias, sourceUrlBase, options) {
 
@@ -40,7 +40,7 @@ function metaEval(source, environment, alias, sourceUrlBase, options) {
 	var wrapperSource = "   // this function evaluates " + alias + "\n\n\t// catch syntax errors early\n\ttry {parse(source);} catch(e) {\n\t\tif (e instanceof SyntaxError) {\n\t\t\t__logSyntaxError(source, e);\n\t\t\treturn;\n\t\t} else throw e;\n\t}\n\n\teval(source);\n\n\t//# sourceURL=" + (sourceUrlBase + "metaEval/" + alias);
 
 	environment.__logSyntaxError = logSyntaxError;
-	environment.__parse = _node_modulesBabelCoreLibHelpersParseJs2["default"];
+	environment.__parse = _babelCoreLibHelpersParseJs2["default"];
 
 	var wrapperParameters = ["source"].concat(Object.keys(environment)).concat([wrapperSource]);
 	var wrapperFunction = Function.prototype.constructor.apply(executable, wrapperParameters);
