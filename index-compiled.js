@@ -36,10 +36,10 @@ function metaEval(source, environment, alias, filename, sourceUrlBase, options) 
 	}
 
 	alias = alias || "anonymousMetaProgram" + createKuid();
-	source = source + "\n//# sourceURL=" + sourceUrlBase + alias;
+	source = source + "\n//# sourceURL=" + sourceUrlBase + filename;
 
 	var executable = Object.create(Function.prototype);
-	var wrapperSource = "   // this function evaluates " + alias + "\n\n\t// catch syntax errors early\n\ttry {__parse(source);}\n\tcatch(e) {\n\t\tif (e instanceof SyntaxError) {\n\t\t\t__logSyntaxError(source, e);\n\t\t\treturn;\n\t\t} else throw e;\n\t}\n\n\teval(source);\n\n\t//# sourceURL=" + (sourceUrlBase + "metaEval/" + filename);
+	var wrapperSource = "   // this function evaluates " + alias + "\n\n\t// catch syntax errors early\n\ttry {__parse(source);}\n\tcatch(e) {\n\t\tif (e instanceof SyntaxError) {\n\t\t\t__logSyntaxError(source, e);\n\t\t\treturn;\n\t\t} else throw e;\n\t}\n\n\teval(source);\n\n\t//# sourceURL=" + (sourceUrlBase + "metaEval/" + alias);
 
 	environment.__logSyntaxError = logSyntaxError;
 	environment.__parse = _babelCoreLibHelpersParseJs2["default"];

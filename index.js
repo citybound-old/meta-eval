@@ -22,7 +22,7 @@ export default function metaEval (source, environment, alias, filename, sourceUr
 	}
 
 	alias = alias || "anonymousMetaProgram" + createKuid();
-	source = source + "\n//# sourceURL=" + sourceUrlBase + alias;
+	source = source + "\n//# sourceURL=" + sourceUrlBase + filename;
 
 	let executable = Object.create(Function.prototype);
 	let wrapperSource =
@@ -39,7 +39,7 @@ export default function metaEval (source, environment, alias, filename, sourceUr
 
 	eval(source);
 
-	//# sourceURL=${sourceUrlBase + "metaEval/" + filename}`;
+	//# sourceURL=${sourceUrlBase + "metaEval/" + alias}`;
 
 	environment.__logSyntaxError = logSyntaxError;
 	environment.__parse = babelParser;
