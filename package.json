@@ -1,6 +1,6 @@
 {
   "name": "meta-eval",
-  "version": "0.0.2",
+  "version": "0.0.8",
   "description": "Eval for metaprogramming debuggable JavaScript",
   "main": "index.js",
   "license": "MIT",
