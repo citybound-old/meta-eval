@@ -1,8 +1,8 @@
 {
   "name": "meta-eval",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Eval for metaprogramming debuggable JavaScript",
-  "main": "index-compiled.js",
+  "main": "index.js",
   "license": "MIT",
   "author": {
     "name": "Anselm Eickhoff",
@@ -14,6 +14,8 @@
   },
   "devDependencies": {},
   "scripts": {
+    "compile": "babel --blacklist=regenerator -o index.js index.es6.js",
+    "prepublish": "npm run compile",
     "test": "node test-compiled.js"
   },
   "keywords": [
