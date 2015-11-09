@@ -44,18 +44,20 @@ const source = `
 `
 
 const environment = {exports: {}};
+
+// this controls how/where the code will show up in DevTools
 const alias = aNameForMyClass;
 const filename = alias + '.js';
 const sourceUrlBase = 'file://myproject/';
 
 // this is where the magic happens
-const newEnvironment = metaEval(source, environment, alias, filename, sourceUrlBase, {transpile: true);
+const newEnvironment = metaEval(source, environment, alias, filename, sourceUrlBase, {transpile: true});
 
 const ActualClass = newEnvironment.exports.theActualClass;
 const instance = new ActualClass(13);
 
-console.log(instance.doSomethinSimple);
-// => "I'm HorribleObjectOrientedMessFactoryProviderStrategy and my magic number is 13";
+console.log(instance.doSomethingSimple());
+// => "I'm HorribleObjectOrientedMessFactoryProviderStrategy and my magic number is 13"
 ```
 
 ## License
