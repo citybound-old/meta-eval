@@ -60,6 +60,11 @@ console.log(instance.doSomethingSimple());
 // => "I'm HorribleObjectOrientedMessFactoryProviderStrategy and my magic number is 13"
 ```
 
+## Contribution
+
+Goals, wishes and bugs are managed as GitHub Issues - if you want to help, have a look there and submit your work as pull requests.
+Your help is highly welcome! :)
+
 ## License
 
 MIT, see [LICENSE.md](http://github.com/aeickhoff/meta-eval/blob/master/LICENSE.md) for details.
