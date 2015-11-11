@@ -67,4 +67,4 @@ Your help is highly welcome! :)
 
 ## License
 
-MIT, see [LICENSE.md](http://github.com/aeickhoff/meta-eval/blob/master/LICENSE.md) for details.
+MIT, see [LICENSE.md](http://github.com/citybound/meta-eval/blob/master/LICENSE.md) for details.
